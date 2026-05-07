@@ -7,6 +7,7 @@ import 'package:snappis/Presentation/Screens/Creator/Cmain_page.dart';
 import 'package:snappis/Presentation/Screens/Forgot_password/Forgot_password.dart';
 import 'package:snappis/Presentation/Screens/Login/Business_login.dart';
 import 'package:snappis/Presentation/Screens/Login/Creator_logins.dart';
+import 'package:snappis/Presentation/Screens/Creator/ReelsApp/creator_reels_main.dart';
 import 'package:snappis/Presentation/Screens/Signup/Business_signup.dart';
 import 'package:snappis/Presentation/Screens/Signup/Creator_signup.dart';
 import 'package:snappis/Presentation/Screens/Splash_screen.dart';
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: "/Creator-choice", 
-          page: () => const CmainPage(),
+          page: () => const CreatorReelsMain(),
         ),
         GetPage(
           name: "/Creator-Signup", 
@@ -106,48 +107,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:snappis/Presentation/Provider/User_provider.dart';
-// import 'package:snappis/Presentation/Screens/User_type_screen.dart';
-
-// void main() {
-//   runApp(
-//     ChangeNotifierProvider(
-//       create: (_) => UserProvider(),
-//       child: const MyApp(),
-//     ),
-//   );
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         // This is the theme of your application.
-//         //
-//         // TRY THIS: Try running your application with "flutter run". You'll see
-//         // the application has a purple toolbar. Then, without quitting the app,
-//         // try changing the seedColor in the colorScheme below to Colors.green
-//         // and then invoke "hot reload" (save your changes or press the "hot
-//         // reload" button in a Flutter-supported IDE, or press "r" if you used
-//         // the command line to start the app).
-//         //
-//         // Notice that the counter didn't reset back to zero; the application
-//         // state is not lost during the reload. To reset the state, use hot
-//         // restart instead.
-//         //
-//         // This works for code too, not just values: Most code changes can be
-//         // tested with just a hot reload.
-//         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-//       ),
-//       home: UserTypeScreen(),
-//     );
-//   }
-// }

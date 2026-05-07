@@ -40,8 +40,8 @@ class ApiConstants {
         return defaultHeaders;
     }
   }
-  static const String baseUrl = "http://192.168.64.156:8000/"; 
-    // static const String baseUrl = "http://192.168.128.156:8000/";
+  // static const String baseUrl = "http://192.168.64.156:8000/"; 
+  static const String baseUrl = "http://localhost:8000/";
   static const String countryCodes = "api/admin/country-phone-codes";
 
   static const String signup = "api/auth/signup";

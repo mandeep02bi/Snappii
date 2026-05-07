@@ -9,7 +9,7 @@ import 'package:snappis/Presentation/Binding/instagrambinding.dart';
 import 'package:snappis/Presentation/Screens/Admin/Admin_Dashboard.dart';
 import 'package:snappis/Presentation/Screens/Business/Bmain_page.dart';
 import 'package:snappis/Presentation/Screens/Change_pwd/Change_password.dart';
-import 'package:snappis/Presentation/Screens/Creator/Cmain_page.dart';
+import 'package:snappis/Presentation/Screens/Creator/ReelsApp/creator_reels_main.dart';
 import 'package:snappis/Presentation/Screens/Forgot_password/OTpSc.dart';
 import 'package:snappis/Presentation/Screens/User_type_screen.dart';
 import '../../Data/repositories/auth_repository.dart';
@@ -72,6 +72,11 @@ Future<void> resendOtp() async {
     isLoading.value = true;
 
     try {
+      // الغاء الربط مؤقتاً للتجربة - Bypassing API
+      await Future.delayed(const Duration(seconds: 1));
+      _navigateByRole(3); // توجيه مباشر كـ Brand
+
+      /*
       final body = {
         "name": nameCtrl.value,
         "first_name": nameCtrl.value.split(" ").first,
@@ -93,16 +98,11 @@ Future<void> resendOtp() async {
       token.value = res.data?.token ?? "";
       userId.value = res.data?.user?.userId ?? ""; // 👈 ADD THIS
 
-
-      // final roleId = res["data"]["data"]["user"]["rtype_id"];
-      // print("ROLE ID RAW => $roleId");
-
-    print("USER => ${user.value}");
-
+      print("USER => ${user.value}");
       print("ROLE ID => $roleId");
 
       _navigateByRole(roleId);
-
+      */
 
     } catch (e) {
       Get.snackbar("Signup Failed", e.toString());
@@ -116,6 +116,9 @@ Future<void> resendOtp() async {
     isLoading.value = true;
 
     try {
+      await Future.delayed(const Duration(seconds: 1));
+      _navigateByRole(2); 
+      /*
       final body = {
         "name": nameCtrl.value,
         "first_name": nameCtrl.value.split(" ").first,
@@ -139,6 +142,7 @@ Future<void> resendOtp() async {
       token.value = res.data?.token ?? "";
 
       _navigateByRole(user.value?.rtypeId);
+      */
 
     } catch (e) {
       Get.snackbar("Signup Failed", e.toString());
@@ -187,9 +191,9 @@ Future<void> login() async {
   if (rtypeId == null) return;
 
   if (rtypeId == 1) {
-    Get.offAll(() => const Admindashboard(),binding: InstagramCategoryBinding());
+    Get.offAll(() => const Admindashboard(), binding: InstagramCategoryBinding());
   } else if (rtypeId == 2) {
-    Get.offAll(() => const CmainPage());
+    Get.offAll(() => const CreatorReelsMain());
   } else if (rtypeId == 3) {
     Get.offAll(() => const BmainPage());
   } else {

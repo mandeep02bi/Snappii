@@ -1,6 +1,6 @@
 import 'package:snappis/Core/Api/ApiServices.dart';
 import 'package:snappis/Core/constant/Apiconstant.dart';
-import 'package:snappis/Data/Models/instagram_category_model.dart';
+import 'package:snappis/Data/Models/Instagram_category_model.dart';
 
 class InstagramCategoryRemoteDataSource {
 

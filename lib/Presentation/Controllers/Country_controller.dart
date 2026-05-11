@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:snappis/Data/Repositories/country_repository.dart';
-import 'package:snappis/Data/models/country_code_model.dart';
+import 'package:snappis/Data/Models/Country_code_model.dart';
 
 class CountryController extends GetxController {
   final CountryRepository _repo = CountryRepository();

@@ -12,7 +12,7 @@ import 'package:snappis/Presentation/Screens/Change_pwd/Change_password.dart';
 import 'package:snappis/Presentation/Screens/Creator/ReelsApp/creator_reels_main.dart';
 import 'package:snappis/Presentation/Screens/Forgot_password/OTpSc.dart';
 import 'package:snappis/Presentation/Screens/User_type_screen.dart';
-import '../../Data/repositories/auth_repository.dart';
+import '../../Data/Repositories/auth_repository.dart';
 
 class AuthController extends GetxController {
   final AuthRepository _repo = AuthRepository();

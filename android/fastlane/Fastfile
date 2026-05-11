@@ -7,7 +7,7 @@ platform :android do
     sh 'flutter pub get'
     sh 'flutter build apk --release'
     firebase_app_distribution(
-      app:'1:855965676576:android:a357c8eaf3db456a743845',
+      app:ENV['FIREBASE_APP_ID'],
       firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
       groups: "testers",
       release_notes: 'Auto-build from GitHub Actions',

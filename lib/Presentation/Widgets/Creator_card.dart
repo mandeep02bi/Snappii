@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snappis/Domains/Entities/Creator_entities.dart';
-import 'package:snappis/Presentation/Screens/Business/Campaign/Profile_Campaign.dart';
+import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Profile_Campaign.dart';
+import 'package:snappis/Presentation/bloc/booking_bloc.dart';
 import 'package:snappis/Presentation/bloc/creator_details_bloc.dart';
 
 class CreatorCard extends StatelessWidget {
@@ -71,9 +72,16 @@ class CreatorCard extends StatelessWidget {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => BlocProvider(
-                    create: (_) => CreatorDetailBloc()
-                      ..add(FetchCreatorDetail(creator.id)),
+                  builder: (_) => MultiBlocProvider(
+                    providers: [
+                      BlocProvider(
+                        create: (_) => CreatorDetailBloc()
+                          ..add(FetchCreatorDetail(creator.id)),
+                      ),
+                      BlocProvider(
+                        create: (_) => BookingBloc(),
+                      ),
+                    ],
                     child: ProfilCamp(creatorId: creator.id),
                   ),
                 ),

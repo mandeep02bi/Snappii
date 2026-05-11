@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
- 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,8 +9,8 @@ class SearchBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 14),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.black26),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Color(0xFFBB93FF)),
         ),
         child: Row(
           children: const [

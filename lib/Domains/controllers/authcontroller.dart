@@ -72,9 +72,9 @@ Future<void> resendOtp() async {
     isLoading.value = true;
 
     try {
-      // الغاء الربط مؤقتاً للتجربة - Bypassing API
+      // Bypassing API for testing
       await Future.delayed(const Duration(seconds: 1));
-      _navigateByRole(3); // توجيه مباشر كـ Brand
+      _navigateByRole(3); // Direct navigation as Brand
 
       /*
       final body = {

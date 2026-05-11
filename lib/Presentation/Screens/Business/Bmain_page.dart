@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snappis/Presentation/Screens/Business/Campaign/Campaignmainpage.dart';
+import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Campaignmainpage.dart';
 import 'package:snappis/Presentation/Screens/Business/Chats/Inbox_screen.dart';
 import 'package:snappis/Presentation/Screens/Business/Home_screen/Bhome.dart';
 import 'package:snappis/Presentation/Screens/Business/Searching/SearchingProfile.dart';

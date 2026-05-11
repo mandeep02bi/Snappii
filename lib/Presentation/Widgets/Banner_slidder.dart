@@ -8,12 +8,12 @@ class BannerSlidder extends StatefulWidget {
 }
 
 class _BannerSlidderState extends State<BannerSlidder> {
-   int index = 0;
+  int index = 0;
 
   final images = [
-    "assets/banner1.jpg",
-    "assets/banner2.jpg",
-    "assets/banner3.jpg",
+    "assets/images/Rectangle 15 copy.png",
+    "assets/images/Rectangle 15 copy.png",
+    "assets/images/Rectangle 15 copy.png",
   ];
 
   @override
@@ -21,7 +21,8 @@ class _BannerSlidderState extends State<BannerSlidder> {
     return Column(
       children: [
         SizedBox(
-          height: 120,
+          width: 361,
+          height: 187,
           child: PageView.builder(
             itemCount: images.length,
             onPageChanged: (i) => setState(() => index = i),
@@ -30,7 +31,9 @@ class _BannerSlidderState extends State<BannerSlidder> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
-                    image: AssetImage(images[i]), fit: BoxFit.cover),
+                  image: AssetImage(images[i]),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

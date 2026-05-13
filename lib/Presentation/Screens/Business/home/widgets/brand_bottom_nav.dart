@@ -25,11 +25,27 @@ class BrandBottomNav extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildNavItem(Icons.home, "/Brand-Home", currentRoute == "/Brand-Home"),
-          _buildNavItem(Icons.campaign_outlined, "/Campaign-Main", currentRoute == "/Campaign-Main"),
+          _buildNavItem(
+            Icons.home,
+            "/Brand-Home",
+            currentRoute == "/Brand-Home",
+          ),
+          _buildNavItem(
+            Icons.campaign_outlined,
+            "/Campaign-Main",
+            currentRoute == "/Campaign-Main",
+          ),
           _buildNavItem(Icons.smart_toy_outlined, "/AI", currentRoute == "/AI"),
-          _buildNavItem(Icons.chat_bubble_outline, "/Chat", currentRoute == "/Chat"),
-          _buildNavItem(Icons.person_outline, "/Profile", currentRoute == "/Profile"),
+          _buildNavItem(
+            Icons.chat_bubble_outline,
+            "/Chat",
+            currentRoute == "/Chat",
+          ),
+          _buildNavItem(
+            Icons.person_outline,
+            "/Profile",
+            currentRoute == "/Profile",
+          ),
         ],
       ),
     );
@@ -39,8 +55,11 @@ class BrandBottomNav extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (!isActive) {
-          if (route == "/Brand-Home" || route == "/Campaign-Main") {
-            Get.offAllNamed(route);
+          if (route == "/Brand-Home" ||
+              route == "/Campaign-Main" ||
+              route == "/AI" ||
+              route == "/Chat") {
+            Get.offNamed(route);
           } else {
             Get.snackbar(
               "Coming Soon",

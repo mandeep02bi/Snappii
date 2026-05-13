@@ -25,10 +25,7 @@ class CampaignTabBar extends StatelessWidget {
         unselectedLabelColor: Colors.black38,
         indicatorSize: TabBarIndicatorSize.tab,
         dividerColor: Colors.transparent,
-        labelStyle: const TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-        ),
+        labelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
         tabs: const [
           Tab(text: "Active"),
           Tab(text: "Pending"),

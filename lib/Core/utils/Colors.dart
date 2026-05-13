@@ -14,6 +14,7 @@ class AppColors {
   static const bottomBar = Color(0xffE7DDF8);
   
   static const purple = Color(0xFF8C7BDB);
+  static const purplePrimary = Color(0xFF7C3AED);
   static const lightPurple = Color(0xFFE8DEFF);
   static const grey = Colors.grey;
 

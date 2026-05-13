@@ -64,14 +64,15 @@ class BrandHomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const CircularAction(
+                  CircularAction(
                     icon: Icons.smart_toy_outlined,
                     label: "AI",
-                    gradientColors: [
+                    gradientColors: const [
                       Color(0xFF232867),
                       Color(0xFF6349F5),
                       Color(0xFF8B48FF),
                     ],
+                    onTap: () => Get.toNamed("/AI"),
                   ),
                   CircularAction(
                     icon: Icons.campaign_outlined,

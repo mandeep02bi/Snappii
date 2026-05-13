@@ -12,6 +12,8 @@ import 'package:snappis/Presentation/Screens/Splash_screen.dart';
 import 'package:snappis/Presentation/Screens/Business/home/Brand_home_screen.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Campaignmainpage.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Basic_Detail.dart';
+import 'package:snappis/Presentation/Screens/Creator/AI/ai_assistant_screen.dart';
+import 'package:snappis/Presentation/Screens/Chat/chat_list_screen.dart';
 import 'Presentation/Screens/User_type_screen.dart';
 
 void main() {
@@ -43,10 +45,12 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/Creator-choice", page: () => const CreatorReelsMain()),
         GetPage(name: "/Creator-Signup", page: () => const CreatorSignup()),
         GetPage(name: "/Creator-Login", page: () => const CreatorLogins()),
+        GetPage(name: "/AI", page: () => const AIAssistantScreen()),
         GetPage(name: "/fpass", page: () => const ForgotPassword()),
         GetPage(name: "/Brand-Home", page: () => const BrandHomeScreen()),
         GetPage(name: "/Campaign-Main", page: () => const Campaignmainpage()),
         GetPage(name: "/Basic-Detail", page: () => const BasicDetail()),
+        GetPage(name: "/Chat", page: () => const ChatListScreen()),
       ],
 
       /// 🏁 Initial Screen

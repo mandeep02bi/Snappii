@@ -1,18 +1,46 @@
 default_platform(:android)
 
 platform :android do
+  before_all do
+    # Load .env file for local development
+    dot_env_path = File.expand_path("../../../.env", __FILE__)
+    if File.exist?(dot_env_path)
+      require 'dotenv'
+      Dotenv.load(dot_env_path)
+      UI.message("✅ Successfully loaded .env from: #{dot_env_path}")
+    else
+      UI.important("⚠️ .env file not found at: #{dot_env_path}")
+    end
+  end
+
   desc "Distribute the app to Firebase App Distribution"
   lane :deploy_to_firebase do
-    sh 'flutter clean'
-    sh 'flutter pub get'
+    # 1. Build the APK
+    # sh 'flutter clean'
+    # sh 'flutter pub get'
     sh 'flutter build apk --release'
+    
+    # 2. Get environment variables
+    app_id = ENV['FIREBASE_APP_ID']
+    token = ENV['FIREBASE_TOKEN'] || ENV['FIREBASE_CLI_TOKEN']
+    
+    UI.message("🚀 Target App ID: #{app_id}")
+    
+    # 3. Use absolute path for APK
+    apk_path = File.expand_path("../../../build/app/outputs/flutter-apk/app-release.apk", __FILE__)
+    UI.message("📦 APK Path: #{apk_path}")
+
+    # 4. Upload to Firebase
+    if app_id.nil? || app_id.empty?
+      UI.user_error!("FIREBASE_APP_ID is missing! Check your .env file.")
+    end
+
     firebase_app_distribution(
-      app:ENV['FIREBASE_APP_ID'],
-      firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
+      app: app_id,
+      android_artifact_path: apk_path,
+      firebase_cli_token: token,
       groups: "testers",
-      release_notes: 'Auto-build from GitHub Actions',
-      android_artifact_type: "APK",
-      android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+      release_notes: "Build triggered at: #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}",
       debug: true
     )
   end

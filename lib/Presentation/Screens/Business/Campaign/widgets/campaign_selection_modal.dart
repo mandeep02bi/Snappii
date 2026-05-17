@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignSelectionModal extends StatefulWidget {
   final String title;
@@ -41,16 +42,16 @@ class _CampaignSelectionModalState extends State<CampaignSelectionModal> {
     return Dialog(
       backgroundColor: const Color(0xFFEDEDED),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         side: BorderSide(
           color: const Color(0xFFADACAE).withOpacity(0.42),
-          width: 1,
+          width: 1.w,
         ),
       ),
       child: Container(
-        width: 312,
-        constraints: const BoxConstraints(minHeight: 160, maxHeight: 400),
-        padding: const EdgeInsets.all(16),
+        width: 312.w,
+        constraints: BoxConstraints(minHeight: 160.h, maxHeight: 400.h),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,10 +61,10 @@ class _CampaignSelectionModalState extends State<CampaignSelectionModal> {
               children: [
                 Text(
                   widget.title,
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF4A4A4A),
+                    color: const Color(0xFF4A4A4A),
                   ),
                 ),
                 GestureDetector(
@@ -73,51 +74,52 @@ class _CampaignSelectionModalState extends State<CampaignSelectionModal> {
                       color: Color(0xFF626262),
                       shape: BoxShape.circle,
                     ),
-                    padding: const EdgeInsets.all(2),
-                    child: const Icon(
+                    padding: EdgeInsets.all(2.r),
+                    child: Icon(
                       Icons.close,
                       color: Colors.white,
-                      size: 16,
+                      size: 16.r,
                     ),
                   ),
                 ),
               ],
             ),
-            const Divider(height: 24, thickness: 1, color: Color(0xFFD9D9D9)),
+            Divider(height: 24.h, thickness: 1, color: const Color(0xFFD9D9D9)),
             TextField(
               controller: _searchController,
               onChanged: _filterList,
+              style: TextStyle(fontSize: 13.sp, color: Colors.black87),
               decoration: InputDecoration(
-                prefixIcon: const Icon(
+                prefixIcon: Icon(
                   Icons.search,
-                  color: Color(0xFFADACAE),
-                  size: 20,
+                  color: const Color(0xFFADACAE),
+                  size: 20.r,
                 ),
                 hintText: widget.searchHint,
-                hintStyle: const TextStyle(
-                  color: Color(0xFFADACAE),
-                  fontSize: 13,
+                hintStyle: TextStyle(
+                  color: const Color(0xFFADACAE),
+                  fontSize: 13.sp,
                 ),
                 filled: true,
                 fillColor: const Color(0xFFF1F1F1),
-                contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                contentPadding: EdgeInsets.symmetric(vertical: 8.h),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                   borderSide: BorderSide(color: Colors.black.withOpacity(0.1)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                   borderSide: BorderSide(color: Colors.black.withOpacity(0.1)),
                 ),
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Flexible(
               child: ListView.separated(
                 shrinkWrap: true,
                 itemCount: filteredOptions.length,
                 separatorBuilder: (_, __) =>
-                    const Divider(height: 1, color: Color(0xFFD9D9D9)),
+                    Divider(height: 1.h, color: const Color(0xFFD9D9D9)),
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
@@ -125,12 +127,12 @@ class _CampaignSelectionModalState extends State<CampaignSelectionModal> {
                       Navigator.pop(context);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      padding: EdgeInsets.symmetric(vertical: 10.h),
                       child: Text(
                         filteredOptions[index],
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Color(0xFF4A4A4A),
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          color: const Color(0xFF4A4A4A),
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CampaignHeader extends StatelessWidget {
@@ -7,33 +8,26 @@ class CampaignHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 10,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 10.h),
       child: Row(
         children: [
           IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-              size: 20,
-            ),
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 20.r),
             onPressed: () => Get.back(),
           ),
-          const Expanded(
+          Expanded(
             child: Center(
               child: Text(
                 "My Campaign",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
           ),
-          const SizedBox(width: 40), // Balance the back button
+          SizedBox(width: 40.w), // Balance the back button
         ],
       ),
     );

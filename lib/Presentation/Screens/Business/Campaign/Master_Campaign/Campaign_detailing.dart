@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/MCampaign_preview.dart';
 import '../widgets/campaign_stepper.dart';
@@ -16,40 +17,40 @@ class CampaignDetailing extends StatelessWidget {
         surfaceTintColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        titleSpacing: -10,
+        titleSpacing: -10.w,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            color: Color(0xFF9136F3),
-            size: 20,
+            color: const Color(0xFF9136F3),
+            size: 20.r,
           ),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
+        title: Text(
           "Targeting", // As per UI image
           style: TextStyle(
-            color: Color(0xFF9136F3),
-            fontSize: 18,
+            color: const Color(0xFF9136F3),
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10.h),
+            Text(
               "Step 1 of 4", // As per UI image (even though it's step 4)
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: TextStyle(color: Colors.black54, fontSize: 14.sp),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             // 1. Stepper UI
             const CampaignStepper(currentStep: 4),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             // 2. Upload Cards
             const CampaignUploadCard(
@@ -59,49 +60,49 @@ class CampaignDetailing extends StatelessWidget {
 
             const CampaignUploadCard(title: "Upload Sample Video"),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 3. Save as Draft Button
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: OutlinedButton(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Color(0xFFE1D0FF), width: 1.5),
+                  side: BorderSide(color: const Color(0xFFE1D0FF), width: 1.5.w),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Save as Draft",
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             // 4. Preview & Publish Button
             Container(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [Color(0xFFBB93FF), Color(0xFF5765FF)],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF5765FF).withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    blurRadius: 10.r,
+                    offset: Offset(0, 5.h),
                   ),
                 ],
               ),
@@ -111,20 +112,20 @@ class CampaignDetailing extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Preview & Publish",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

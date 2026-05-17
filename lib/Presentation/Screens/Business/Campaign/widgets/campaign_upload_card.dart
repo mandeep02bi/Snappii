@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snappis/Core/assets.dart';
 
 class CampaignUploadCard extends StatelessWidget {
@@ -16,69 +17,69 @@ class CampaignUploadCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: 20.h),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: Colors.black.withOpacity(0.1)),
       ),
       child: Column(
         children: [
-          const SizedBox(height: 12),
-          const Text(
+          SizedBox(height: 12.h),
+          Text(
             "Optional",
             style: TextStyle(
               color: Colors.black45,
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(12.0.r),
             child: CustomPaint(
               painter: DashedBorderPainter(),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 40),
+                padding: EdgeInsets.symmetric(vertical: 40.h),
                 child: Column(
                   children: [
-                    Image.asset(AppAssets.uploadIcon, width: 65, height: 65),
-                    const SizedBox(height: 16),
+                    Image.asset(AppAssets.uploadIcon, width: 65.w, height: 65.w),
+                    SizedBox(height: 16.h),
                     Text(
                       title,
-                      style: const TextStyle(
-                        fontSize: 15,
+                      style: TextStyle(
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.black54,
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    const Text(
+                    SizedBox(height: 4.h),
+                    Text(
                       "Drag & drop or Click to browse file",
-                      style: TextStyle(fontSize: 13, color: Colors.black26),
+                      style: TextStyle(fontSize: 13.sp, color: Colors.black26),
                     ),
                     if (recommendedText != null) ...[
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 8.h,
                         ),
                         decoration: BoxDecoration(
                           color: const Color(0xFFF9F7FF),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                           border: Border.all(
                             color: const Color(0xFFE1D0FF),
-                            width: 0.5,
+                            width: 0.5.w,
                           ),
                         ),
                         child: Text(
                           recommendedText!,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 11,
-                            color: Color(0xFF9136F3),
+                          style: TextStyle(
+                            fontSize: 11.sp,
+                            color: const Color(0xFF9136F3),
                             height: 1.4,
                           ),
                         ),
@@ -100,12 +101,12 @@ class DashedBorderPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
       ..color = Colors.black12
-      ..strokeWidth = 1.5
+      ..strokeWidth = 1.5.w
       ..style = PaintingStyle.stroke;
 
     const double dashWidth = 5;
     const double dashSpace = 3;
-    final Radius radius = const Radius.circular(15);
+    final Radius radius = Radius.circular(15.r);
 
     final RRect rrect = RRect.fromRectAndRadius(
       Rect.fromLTWH(0, 0, size.width, size.height),

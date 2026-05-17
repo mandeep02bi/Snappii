@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignDeliverableRow extends StatefulWidget {
   final String title;
@@ -26,46 +27,46 @@ class _CampaignDeliverableRowState extends State<CampaignDeliverableRow> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: EdgeInsets.symmetric(vertical: 12.h),
       child: Row(
         children: [
           Expanded(
             child: Text(
               widget.title,
-              style: const TextStyle(
-                fontSize: 15,
+              style: TextStyle(
+                fontSize: 15.sp,
                 color: Colors.black87,
                 fontWeight: FontWeight.w500,
               ),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.remove, size: 20, color: Colors.black54),
+            icon: Icon(Icons.remove, size: 20.r, color: Colors.black54),
             onPressed: () {
               if (value > 0) setState(() => value--);
             },
           ),
           Container(
-            width: 30,
-            height: 30,
+            width: 30.w,
+            height: 30.w,
             decoration: BoxDecoration(
               color: const Color(0xFFE1D0FF).withOpacity(0.55),
               shape: BoxShape.circle,
-              border: Border.all(color: const Color(0xFFC0C0C0), width: 1),
+              border: Border.all(color: const Color(0xFFC0C0C0), width: 1.w),
             ),
             child: Center(
               child: Text(
                 "$value",
-                style: const TextStyle(
-                  fontSize: 14,
+                style: TextStyle(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF9136F3),
+                  color: const Color(0xFF9136F3),
                 ),
               ),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.add, size: 20, color: Colors.black54),
+            icon: Icon(Icons.add, size: 20.r, color: Colors.black54),
             onPressed: () {
               setState(() => value++);
             },
@@ -82,10 +83,10 @@ class CampaignDeliverablesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         border: Border.all(color: Colors.black.withOpacity(0.1)),
       ),
       child: Column(

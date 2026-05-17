@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignFieldLabel extends StatelessWidget {
   final String label;
@@ -8,10 +9,14 @@ class CampaignFieldLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: EdgeInsets.only(bottom: 8.0.h),
       child: Text(
         label,
-        style: const TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: Colors.black87,
+          fontSize: 14.sp,
+        ),
       ),
     );
   }

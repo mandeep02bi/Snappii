@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:snappis/Presentation/Screens/Chat/chat_conversation_screen.dart';
 
 class ChatListTile extends StatelessWidget {
   final String title;
@@ -19,7 +21,7 @@ class ChatListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => Get.to(() => ChatConversationScreen(title: title)),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
         child: Row(

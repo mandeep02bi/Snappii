@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snappis/Core/utils/Colors.dart';
 
 class CampaignStepHeader extends StatelessWidget {
@@ -21,14 +22,14 @@ class CampaignStepHeader extends StatelessWidget {
         Row(
           children: [
             IconButton(
-              icon: const Icon(Icons.arrow_back),
+              icon: Icon(Icons.arrow_back, size: 24.r),
               onPressed: () => Navigator.pop(context),
             ),
-            const SizedBox(width: 6),
+            SizedBox(width: 6.w),
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 18,
+              style: TextStyle(
+                fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
                 color: AppColors.primary,
               ),
@@ -39,7 +40,7 @@ class CampaignStepHeader extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: Text(
             "Step $currentStep/$totalSteps",
-            style: const TextStyle(color: Colors.black54, fontSize: 14),
+            style: TextStyle(color: Colors.black54, fontSize: 14.sp),
           ),
         ),
       ],

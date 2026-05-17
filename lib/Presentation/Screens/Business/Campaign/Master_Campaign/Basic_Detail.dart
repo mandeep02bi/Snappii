@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Influencer.dart';
 import '../widgets/campaign_stepper.dart';
@@ -30,46 +31,46 @@ class _BasicDetailState extends State<BasicDetail> {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        titleSpacing: -10,
+        titleSpacing: -10.w,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            color: Color(0xFF9136F3),
-            size: 20,
+            color: const Color(0xFF9136F3),
+            size: 20.r,
           ),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
+        title: Text(
           "Basic Details",
           style: TextStyle(
-            color: Color(0xFF9136F3),
-            fontSize: 18,
+            color: const Color(0xFF9136F3),
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10.h),
+            Text(
               "Step 1 of 4",
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: TextStyle(color: Colors.black54, fontSize: 14.sp),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             // 1. Stepper UI
             const CampaignStepper(currentStep: 1),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             // 2. Form Fields
             const CampaignFieldLabel(label: "Campaign Name"),
             const CampaignTextField(hint: "Enter Name"),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             const CampaignFieldLabel(label: "Influencer Category"),
             CampaignDropdownField(
@@ -81,7 +82,7 @@ class _BasicDetailState extends State<BasicDetail> {
                   context: context,
                   title: "Influencer Category",
                   searchHint: "Search",
-                  options: ["Beauty"],
+                  options: const ["Beauty"],
                   onSelected: (val) {
                     setState(() => selectedCategory = val);
                   },
@@ -89,7 +90,7 @@ class _BasicDetailState extends State<BasicDetail> {
               },
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             const CampaignFieldLabel(label: "Deadline"),
             CampaignDropdownField(
@@ -107,7 +108,7 @@ class _BasicDetailState extends State<BasicDetail> {
               },
             ),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             // 3. Creator's Location Section
             CampaignLocationSection(
@@ -123,7 +124,7 @@ class _BasicDetailState extends State<BasicDetail> {
                     context: context,
                     title: "Select State",
                     searchHint: "Search a particular State",
-                    options: ["Assam"],
+                    options: const ["Assam"],
                     onSelected: (selected) {
                       // Handle state selection
                     },
@@ -133,7 +134,7 @@ class _BasicDetailState extends State<BasicDetail> {
                     context: context,
                     title: "Select City",
                     searchHint: "Search a particular City",
-                    options: ["New Delhi"],
+                    options: const ["New Delhi"],
                     onSelected: (selected) {
                       // Handle city selection
                     },
@@ -142,24 +143,24 @@ class _BasicDetailState extends State<BasicDetail> {
               },
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 
             // 4. Next Button
             Container(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [Color(0xFFBB93FF), Color(0xFF5765FF)],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF5765FF).withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    blurRadius: 10.r,
+                    offset: Offset(0, 5.h),
                   ),
                 ],
               ),
@@ -169,20 +170,20 @@ class _BasicDetailState extends State<BasicDetail> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Next",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

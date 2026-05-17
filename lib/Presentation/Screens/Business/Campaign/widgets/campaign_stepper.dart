@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignStepper extends StatelessWidget {
   final int currentStep;
@@ -12,38 +13,56 @@ class CampaignStepper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(totalSteps, (index) {
-        int step = index + 1;
-        bool isActive = step <= currentStep;
-        return Expanded(
-          child: Row(
-            children: [
-              Container(
-                width: 24,
-                height: 24,
+    return Center(
+      child: SizedBox(
+        width: 290
+            .w, // Made it even longer ("أطول") to stretch beautifully across the screen
+        child: Row(
+          children: List.generate(totalSteps * 2 - 1, (index) {
+            if (index.isEven) {
+              // Circle step node
+              int step = (index ~/ 2) + 1;
+              bool isActive = step <= currentStep;
+              return Container(
+                width: 24.w,
+                height: 24.w,
                 decoration: BoxDecoration(
-                  color: isActive ? const Color(0xFF9136F3) : const Color(0xFFE8DEFF),
+                  color: isActive
+                      ? const Color(0xFF9136F3)
+                      : const Color(0xFFE8DEFF),
                   shape: BoxShape.circle,
                 ),
                 child: Center(
                   child: Text(
                     "$step",
-                    style: const TextStyle(color: Colors.white, fontSize: 12),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              if (index < totalSteps - 1)
-                Expanded(
-                  child: Container(
-                    height: 2,
-                    color: isActive ? const Color(0xFF9136F3) : const Color(0xFFE8DEFF),
+              );
+            } else {
+              // Connecting line
+              int lineIndex = index ~/ 2;
+              bool isActive = lineIndex < currentStep;
+              return Expanded(
+                child: Container(
+                  height: 10
+                      .h, // Made it even thicker ("أعرض") for a very bold progress pill (10.h)
+                  decoration: BoxDecoration(
+                    color: isActive
+                        ? const Color(0xFF9136F3)
+                        : const Color(0xFFE8DEFF),
+                    borderRadius: BorderRadius.circular(5.r),
                   ),
                 ),
-            ],
-          ),
-        );
-      }),
+              );
+            }
+          }),
+        ),
+      ),
     );
   }
 }

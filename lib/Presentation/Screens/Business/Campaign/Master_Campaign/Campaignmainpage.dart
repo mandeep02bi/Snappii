@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snappis/Presentation/Screens/Business/home/widgets/brand_bottom_nav.dart';
 import '../widgets/campaign_header.dart';
 import '../widgets/campaign_tab_bar.dart';
@@ -39,15 +40,15 @@ class _CampaignmainpageState extends State<Campaignmainpage>
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     CampaignTabBar(tabController: _tabController),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:snappis/Core/utils/Colors.dart';
 import 'package:snappis/Domains/Entities/Inbox_entities.dart';
+import 'package:snappis/Presentation/Screens/Chat/chat_conversation_screen.dart';
 
 class InboxTile extends StatelessWidget {
   final InboxEntity item;
@@ -12,6 +14,7 @@ class InboxTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
+          onTap: () => Get.to(() => ChatConversationScreen(title: item.title)),
           leading: CircleAvatar(child: Text(item.title[0])),
           title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.bold)),
           subtitle: Text(item.subtitle),

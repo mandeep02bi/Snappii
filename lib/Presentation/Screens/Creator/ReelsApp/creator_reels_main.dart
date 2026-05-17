@@ -3,6 +3,7 @@ import 'package:snappis/Presentation/Screens/Creator/AI/ai_assistant_screen.dart
 import 'package:snappis/Presentation/Screens/Creator/Campaign/CCampaign.dart';
 import 'package:snappis/Presentation/Screens/Creator/ReelsApp/reels_home_screen.dart';
 import 'package:snappis/Presentation/Screens/Creator/ReelsApp/reels_profile_screen.dart';
+import 'package:snappis/Presentation/Screens/Chat/chat_list_screen.dart';
 
 class CreatorReelsMain extends StatefulWidget {
   const CreatorReelsMain({super.key});
@@ -18,7 +19,7 @@ class _CreatorReelsMainState extends State<CreatorReelsMain> {
     const ReelsHomeScreen(),
     const Ccampaign(),
     const AIAssistantScreen(),
-    const Center(child: Text("Messages")), // Placeholder
+    const ChatListScreen(showBottomNav: false),
     const ReelsProfileScreen(),
   ];
 

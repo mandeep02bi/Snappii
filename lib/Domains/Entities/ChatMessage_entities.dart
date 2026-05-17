@@ -1,0 +1,13 @@
+class ChatMessage {
+  final String text;
+  final bool isMe;
+  final DateTime timestamp;
+  final String? imageUrl;
+
+  ChatMessage({
+    required this.text,
+    required this.isMe,
+    required this.timestamp,
+    this.imageUrl,
+  });
+}

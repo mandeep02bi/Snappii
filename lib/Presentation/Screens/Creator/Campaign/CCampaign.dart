@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:snappis/Core/utils/Colors.dart';
 import 'package:snappis/Presentation/Widgets/Creator_campaign_card.dart';
 
@@ -17,29 +18,27 @@ class _CcampaignState extends State<Ccampaign> {
       backgroundColor: AppColors.bg,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Center(
                 child: Text(
                   "Explore campaign",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
 
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              CreatorCampaignCard(),
+              const CreatorCampaignCard(),
             ],
           ),
         ),
       ),
-
-      /// Bottom Navigation
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Targeting.dart';
 import '../widgets/campaign_stepper.dart';
@@ -19,86 +20,87 @@ class Influencer extends StatelessWidget {
         surfaceTintColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        titleSpacing: -10,
+        titleSpacing: -10.w,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            color: Color(0xFF9136F3),
-            size: 20,
+            color: const Color(0xFF9136F3),
+            size: 20.r,
           ),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
+        title: Text(
           "Influencer",
           style: TextStyle(
-            color: Color(0xFF9136F3),
-            fontSize: 18,
+            color: const Color(0xFF9136F3),
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10.h),
+            Text(
               "Step 2 of 4",
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: TextStyle(color: Colors.black54, fontSize: 14.sp),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             // 1. Stepper UI
             const CampaignStepper(currentStep: 2),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             // 2. Minimum Followers
             const CampaignFieldLabel(label: "Minimum Followers"),
             const CampaignTextField(hint: "E.g 10,000"),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 3. Number of Influencer
             const CampaignFieldLabel(label: "Number of Influencer"),
             const CampaignCounterField(),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 4. Deliverable by Influencer
             const CampaignFieldLabel(label: "Deliverable by Influencer"),
             const CampaignDeliverablesSection(),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 5. Budget per Influencer
             const CampaignFieldLabel(label: "Budget per Influencer"),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10.r),
                 border: Border.all(color: Colors.black.withOpacity(0.1)),
               ),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     "₹",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(width: 12),
+                  SizedBox(width: 12.w),
                   Expanded(
                     child: TextField(
+                      style: TextStyle(fontSize: 15.sp, color: Colors.black87),
                       decoration: InputDecoration(
                         hintText: "Amount",
                         hintStyle: TextStyle(
                           color: Colors.black45,
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
                         ),
                         border: InputBorder.none,
@@ -111,30 +113,30 @@ class Influencer extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 8),
-            const Text(
+            SizedBox(height: 8.h),
+            Text(
               "Total Budget: ₹",
-              style: TextStyle(fontSize: 13, color: Colors.black45),
+              style: TextStyle(fontSize: 13.sp, color: Colors.black45),
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 
             // 6. Next Button
             Container(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [Color(0xFFBB93FF), Color(0xFF5765FF)],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF5765FF).withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    blurRadius: 10.r,
+                    offset: Offset(0, 5.h),
                   ),
                 ],
               ),
@@ -144,20 +146,20 @@ class Influencer extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Next",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignDropdownField extends StatelessWidget {
   final String hint;
@@ -10,23 +11,27 @@ class CampaignDropdownField extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(8.r),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           border: Border.all(color: Colors.black12),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              hint.isEmpty ? "Select" : hint,
-              style: TextStyle(
-                color: hint.isEmpty ? Colors.black26 : Colors.black87,
+            Expanded(
+              child: Text(
+                hint.isEmpty ? "Select" : hint,
+                style: TextStyle(
+                  color: hint.isEmpty ? Colors.black26 : Colors.black87,
+                  fontSize: 14.sp,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
-            const Icon(Icons.keyboard_arrow_down, color: Colors.black54),
+            Icon(Icons.keyboard_arrow_down, color: Colors.black54, size: 24.r),
           ],
         ),
       ),

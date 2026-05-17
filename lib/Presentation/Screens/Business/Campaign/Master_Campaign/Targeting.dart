@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:snappis/Presentation/Screens/Business/Campaign/Master_Campaign/Campaign_detailing.dart';
 import '../widgets/campaign_stepper.dart';
@@ -27,40 +28,40 @@ class _TargetingState extends State<Targeting> {
         surfaceTintColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        titleSpacing: -10,
+        titleSpacing: -10.w,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            color: Color(0xFF9136F3),
-            size: 20,
+            color: const Color(0xFF9136F3),
+            size: 20.r,
           ),
           onPressed: () => Get.back(),
         ),
-        title: const Text(
+        title: Text(
           "Targeting",
           style: TextStyle(
-            color: Color(0xFF9136F3),
-            fontSize: 18,
+            color: const Color(0xFF9136F3),
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10.h),
+            Text(
               "Step 3 of 4",
-              style: TextStyle(color: Colors.black54, fontSize: 14),
+              style: TextStyle(color: Colors.black54, fontSize: 14.sp),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             
             // 1. Stepper UI
             const CampaignStepper(currentStep: 3),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             // 2. Campaign Description
             const CampaignFieldLabel(label: "Campaign Description"),
@@ -69,55 +70,67 @@ class _TargetingState extends State<Targeting> {
               maxLines: 4,
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 3. Gender
             const CampaignFieldLabel(label: "Gender"),
             Row(
               children: [
-                CampaignOptionCard(
-                  label: "Male",
-                  isSelected: selectedGender == "Male",
-                  onTap: () => setState(() => selectedGender = "Male"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "Male",
+                    isSelected: selectedGender == "Male",
+                    onTap: () => setState(() => selectedGender = "Male"),
+                  ),
                 ),
-                CampaignOptionCard(
-                  label: "Female",
-                  isSelected: selectedGender == "Female",
-                  onTap: () => setState(() => selectedGender = "Female"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "Female",
+                    isSelected: selectedGender == "Female",
+                    onTap: () => setState(() => selectedGender = "Female"),
+                  ),
                 ),
-                CampaignOptionCard(
-                  label: "Other",
-                  isSelected: selectedGender == "Other",
-                  onTap: () => setState(() => selectedGender = "Other"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "Other",
+                    isSelected: selectedGender == "Other",
+                    onTap: () => setState(() => selectedGender = "Other"),
+                  ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 4. Age
             const CampaignFieldLabel(label: "Age"),
             Row(
               children: [
-                CampaignOptionCard(
-                  label: "18 - 25",
-                  isSelected: selectedAge == "18 - 25",
-                  onTap: () => setState(() => selectedAge = "18 - 25"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "18 - 25",
+                    isSelected: selectedAge == "18 - 25",
+                    onTap: () => setState(() => selectedAge = "18 - 25"),
+                  ),
                 ),
-                CampaignOptionCard(
-                  label: "25 - 35",
-                  isSelected: selectedAge == "25 - 35",
-                  onTap: () => setState(() => selectedAge = "25 - 35"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "25 - 35",
+                    isSelected: selectedAge == "25 - 35",
+                    onTap: () => setState(() => selectedAge = "25 - 35"),
+                  ),
                 ),
-                CampaignOptionCard(
-                  label: "Above 35",
-                  isSelected: selectedAge == "Above 35",
-                  onTap: () => setState(() => selectedAge = "Above 35"),
+                Expanded(
+                  child: CampaignOptionCard(
+                    label: "Above 35",
+                    isSelected: selectedAge == "Above 35",
+                    onTap: () => setState(() => selectedAge = "Above 35"),
+                  ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // 5. Do's and Dont's
             Row(
@@ -130,7 +143,7 @@ class _TargetingState extends State<Targeting> {
                     },
                   ),
                 ),
-                const SizedBox(width: 16),
+                SizedBox(width: 16.w),
                 Expanded(
                   child: CampaignDropdownField(
                     hint: "Dont's",
@@ -142,24 +155,24 @@ class _TargetingState extends State<Targeting> {
               ],
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 
             // 6. Next Button
             Container(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [Color(0xFFBB93FF), Color(0xFF5765FF)],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(25.r),
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF5765FF).withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    blurRadius: 10.r,
+                    offset: Offset(0, 5.h),
                   ),
                 ],
               ),
@@ -169,20 +182,20 @@ class _TargetingState extends State<Targeting> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Next",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

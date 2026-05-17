@@ -11,11 +11,13 @@ platform :android do
     else
       UI.important("⚠️ .env file not found at: #{dot_env_path}")
     end
+    # Increase timeout for Firebase App Distribution
+    ENV["GOOGLE_API_CLIENT_TIMEOUT"] = "600"
   end
 
   desc "Distribute the app to Firebase App Distribution"
   lane :deploy_to_firebase do
-    # 1. Build the APK
+    # 1. Build the APK``
     # sh 'flutter clean'
     # sh 'flutter pub get'
     sh 'flutter build apk --release'

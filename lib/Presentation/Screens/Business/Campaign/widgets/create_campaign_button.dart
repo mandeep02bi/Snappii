@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CreateCampaignButton extends StatelessWidget {
@@ -7,22 +8,22 @@ class CreateCampaignButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: EdgeInsets.all(20.0.r),
       child: Container(
-        height: 45,
-        width: 201,
+        height: 45.h,
+        width: 201.w,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [Color(0xFFBB93FF), Color(0xFF5765FF)],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(25.r),
           boxShadow: [
             BoxShadow(
               color: const Color(0xFF5765FF).withOpacity(0.3),
-              blurRadius: 10,
-              offset: const Offset(0, 5),
+              blurRadius: 10.r,
+              offset: Offset(0, 5.h),
             ),
           ],
         ),
@@ -32,14 +33,14 @@ class CreateCampaignButton extends StatelessWidget {
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(25.r),
             ),
           ),
-          child: const Text(
+          child: Text(
             "Create Campaign",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 19,
+              fontSize: 19.sp,
               fontWeight: FontWeight.bold,
             ),
           ),

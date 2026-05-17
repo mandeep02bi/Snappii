@@ -58,7 +58,8 @@ class BrandBottomNav extends StatelessWidget {
           if (route == "/Brand-Home" ||
               route == "/Campaign-Main" ||
               route == "/AI" ||
-              route == "/Chat") {
+              route == "/Chat" ||
+              route == "/Profile") {
             Get.offNamed(route);
           } else {
             Get.snackbar(

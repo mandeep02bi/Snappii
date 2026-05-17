@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CampaignInfoBadge extends StatelessWidget {
   final IconData icon;
@@ -15,18 +16,18 @@ class CampaignInfoBadge extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(8.r),
           decoration: BoxDecoration(
             color: const Color(0xFFE8DEFF),
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
           ),
-          child: Icon(icon, color: const Color(0xFF9136F3), size: 18),
+          child: Icon(icon, color: const Color(0xFF9136F3), size: 18.r),
         ),
-        const SizedBox(width: 12),
+        SizedBox(width: 12.w),
         Text(
           text,
-          style: const TextStyle(
-            fontSize: 14,
+          style: TextStyle(
+            fontSize: 14.sp,
             fontWeight: FontWeight.bold,
             color: Colors.black87,
           ),

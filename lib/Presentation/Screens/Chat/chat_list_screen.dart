@@ -4,7 +4,8 @@ import 'package:snappis/Presentation/Screens/Business/home/widgets/brand_bottom_
 import 'package:snappis/Presentation/Widgets/Chat/chat_list_tile.dart';
 
 class ChatListScreen extends StatefulWidget {
-  const ChatListScreen({super.key});
+  final bool showBottomNav;
+  const ChatListScreen({super.key, this.showBottomNav = true});
 
   @override
   State<ChatListScreen> createState() => _ChatListScreenState();
@@ -28,14 +29,14 @@ class _ChatListScreenState extends State<ChatListScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
-        leading: IconButton(
+        leading: widget.showBottomNav ? IconButton(
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: Color(0xFF7D35F9),
             size: 20,
           ),
           onPressed: () => Get.back(),
-        ),
+        ) : null,
         title: const Text(
           'Chat',
           style: TextStyle(
@@ -100,7 +101,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           Expanded(child: _buildChatList(_selectedFilter)),
         ],
       ),
-      bottomNavigationBar: const BrandBottomNav(),
+      bottomNavigationBar: widget.showBottomNav ? const BrandBottomNav() : null,
     );
   }
 

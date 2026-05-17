@@ -95,7 +95,7 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
           ),
         ),
       ),
-      // bottomNavigationBar: const B(),
+      // bottomNavigationBar: const BottomNavigationBar (),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class CampaignDatePickerModal extends StatefulWidget {
@@ -32,15 +33,15 @@ class _CampaignDatePickerModalState extends State<CampaignDatePickerModal> {
     return Dialog(
       backgroundColor: const Color(0xFFEDEDED),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         side: BorderSide(
           color: const Color(0xFFADACAE).withOpacity(0.42),
-          width: 1,
+          width: 1.w,
         ),
       ),
       child: Container(
-        width: 312,
-        padding: const EdgeInsets.all(16),
+        width: 312.w,
+        padding: EdgeInsets.all(16.r),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,12 +49,12 @@ class _CampaignDatePickerModalState extends State<CampaignDatePickerModal> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   "Selected date",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF4A4A4A),
+                    color: const Color(0xFF4A4A4A),
                   ),
                 ),
                 GestureDetector(
@@ -63,26 +64,26 @@ class _CampaignDatePickerModalState extends State<CampaignDatePickerModal> {
                       color: Color(0xFF626262),
                       shape: BoxShape.circle,
                     ),
-                    padding: const EdgeInsets.all(2),
-                    child: const Icon(
+                    padding: EdgeInsets.all(2.r),
+                    child: Icon(
                       Icons.close,
                       color: Colors.white,
-                      size: 16,
+                      size: 16.r,
                     ),
                   ),
                 ),
               ],
             ),
-            const Divider(height: 24, thickness: 1, color: Color(0xFFD9D9D9)),
+            Divider(height: 24.h, thickness: 1, color: const Color(0xFFD9D9D9)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   DateFormat('MMMM yyyy').format(_focusedDay),
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF4A4A4A),
+                    color: const Color(0xFF4A4A4A),
                   ),
                 ),
                 Row(
@@ -119,10 +120,10 @@ class _CampaignDatePickerModalState extends State<CampaignDatePickerModal> {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
             // Simple Calendar Grid
             SizedBox(
-              height: 280,
+              height: 280.h,
               child: Theme(
                 data: Theme.of(context).copyWith(
                   colorScheme: const ColorScheme.light(

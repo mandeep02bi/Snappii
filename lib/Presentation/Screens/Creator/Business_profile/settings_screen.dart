@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snappis/Presentation/Screens/Creator/Business_profile/widgets/business_profile_widgets.dart';
 
+Future<void> _onDeleteAccount() async {
+  final confirmed = await BrandDeleteAccountDialog.show();
+  if (confirmed != true) return;
+
+  Get.snackbar(
+    'Account',
+    'Profile deletion request received.',
+    snackPosition: SnackPosition.BOTTOM,
+    backgroundColor: Colors.white,
+    colorText: Colors.black87,
+  );
+}
+
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -63,21 +76,21 @@ class SettingsScreen extends StatelessWidget {
                         icon: Icons.person_add_alt_1_outlined,
                         title: 'Edit Profile',
                         showArrow: false,
-                        onTap: () {},
+                        onTap: () => Get.toNamed('/Brand-Edit-Profile'),
                       ),
                       _divider(),
                       _buildItem(
                         icon: Icons.manage_accounts_outlined,
-                        title: 'Account',
+                        title: 'Delete Account',
                         showArrow: true,
-                        onTap: () {},
+                        onTap: () => _onDeleteAccount(),
                       ),
                       _divider(),
                       _buildItem(
                         icon: Icons.account_balance_wallet_outlined,
                         title: 'Wallet',
                         showArrow: false,
-                        onTap: () {},
+                        onTap: () => Get.toNamed('/Brand-Wallet'),
                       ),
                       _divider(),
                       _buildItem(
@@ -91,7 +104,7 @@ class SettingsScreen extends StatelessWidget {
                         icon: Icons.info_outline_rounded,
                         title: 'About',
                         showArrow: true,
-                        onTap: () {},
+                        onTap: () => Get.toNamed('/Brand-About'),
                       ),
                       _divider(),
                       _buildItem(

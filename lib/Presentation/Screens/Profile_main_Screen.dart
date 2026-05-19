@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:snappis/Core/utils/Colors.dart';
 import 'package:snappis/Presentation/Screens/Business/Wallet_screen/Wallet_screen.dart';
-import 'package:snappis/Presentation/Screens/Creator/Profile/CEdit_profile.dart';
+import 'package:get/get.dart';
 import 'package:snappis/Presentation/Widgets/Settinf_tiles.dart';
 
 class ProfileMainScreen extends StatefulWidget {
@@ -34,7 +34,7 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.black
+                      color: AppColors.black,
                     ),
                   ),
                   Spacer(),
@@ -47,23 +47,15 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
               SettingTile(
                 icon: Icons.person_outline,
                 title: "Edit Profile",
-                onTap: () {
-                   Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const EditProfileSc(),
-                            ),
-                          ); 
-                },
+                onTap: () => Get.toNamed('/Brand-Edit-Profile'),
               ),
               SettingTile(
                 icon: Icons.wallet_outlined,
                 title: "Wallet",
                 onTap: () {
                   Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const WalletScreen(),
-                            ),
-                          ); 
+                    MaterialPageRoute(builder: (_) => const WalletScreen()),
+                  );
                 },
               ),
               SettingTile(
@@ -86,11 +78,7 @@ class _ProfileMainScreenState extends State<ProfileMainScreen> {
                 title: "About",
                 onTap: () {},
               ),
-              SettingTile(
-                icon: Icons.logout,
-                title: "Logout",
-                onTap: () {},
-              ),
+              SettingTile(icon: Icons.logout, title: "Logout", onTap: () {}),
             ],
           ),
         ),

@@ -7,7 +7,6 @@ import 'package:snappis/Data/ResponseModel/userModel.dart';
 import 'package:snappis/Domains/helper/validation.dart';
 import 'package:snappis/Presentation/Binding/instagrambinding.dart';
 import 'package:snappis/Presentation/Screens/Admin/Admin_Dashboard.dart';
-import 'package:snappis/Presentation/Screens/Business/Bmain_page.dart';
 import 'package:snappis/Presentation/Screens/Change_pwd/Change_password.dart';
 import 'package:snappis/Presentation/Screens/Creator/ReelsApp/creator_reels_main.dart';
 import 'package:snappis/Presentation/Screens/Forgot_password/OTpSc.dart';
@@ -195,7 +194,7 @@ Future<void> login() async {
   } else if (rtypeId == 2) {
     Get.offAll(() => const CreatorReelsMain());
   } else if (rtypeId == 3) {
-    Get.offAll(() => const BmainPage());
+    Get.offAllNamed('/Brand-Home');
   } else {
     Get.snackbar("Error", "Invalid user role");
   }

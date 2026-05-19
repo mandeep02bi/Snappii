@@ -17,6 +17,10 @@ import 'package:snappis/Presentation/Screens/Creator/AI/ai_assistant_screen.dart
 import 'package:snappis/Presentation/Screens/Chat/chat_list_screen.dart';
 import 'package:snappis/Presentation/Screens/Creator/Business_profile/business_profile_screen.dart';
 import 'package:snappis/Presentation/Screens/Creator/Business_profile/settings_screen.dart';
+import 'package:snappis/Presentation/Screens/Creator/Business_profile/brand_edit_profile_screen.dart';
+import 'package:snappis/Presentation/Screens/Creator/Business_profile/brand_about_screen.dart';
+import 'package:snappis/Presentation/Screens/Creator/Business_profile/brand_wallet_screen.dart';
+import 'package:snappis/Presentation/Screens/Creator/Business_profile/brand_wallet_add_money_screen.dart';
 import 'Presentation/Screens/User_type_screen.dart';
 
 void main() {
@@ -61,6 +65,16 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/Chat", page: () => const ChatListScreen()),
             GetPage(name: "/Profile", page: () => const BusinessProfileScreen()),
             GetPage(name: "/Settings", page: () => const SettingsScreen()),
+            GetPage(
+              name: "/Brand-Edit-Profile",
+              page: () => const BrandEditProfileScreen(),
+            ),
+            GetPage(name: "/Brand-About", page: () => const BrandAboutScreen()),
+            GetPage(name: "/Brand-Wallet", page: () => const BrandWalletScreen()),
+            GetPage(
+              name: "/Brand-Wallet-Add-Money",
+              page: () => const BrandWalletAddMoneyScreen(),
+            ),
           ],
 
           /// 🏁 Initial Screen
